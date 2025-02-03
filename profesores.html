@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Formulario Profesor</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/appprofesor.js"></script>
+</head>
+<body>
+
+    <header class="header">
+        <input type="checkbox" name="menu" id="menu">
+        <label class="header__menu--button" for="menu">
+            <span class="material-symbols-outlined">menu</span>
+        </label>
+        <h1>Formulario Profesores</h1>
+        <div class="menu__overlay">
+
+        </div>
+        <nav class="header__menu">
+            <div class="menu__container">
+                <label class="header__menu--close" for="menu">
+                    <span class="material-symbols-outlined">Close</span>
+                </label>
+                <div class="menu__profile">
+                    <a href="#" class="profile">
+                        <img src="img/profile.webp" alt="Profile">
+                        <h3>Jhoan Reyes</h3>
+                    </a>
+                </div>
+                <ul class="menu__list">
+                    <li class="menu__item"><a href="index.html">Inicio</a></li>
+                    <li class="menu__item"><a href="avisos.html">Avisos</a></li>
+                    <li class="menu__item"><a href="ayuda.html">Ayuda</a></li>
+                    <li class="menu__item"><a href="configuracion.html">Configuración</a></li>
+                </ul>
+                <div class="logout__button--container">
+                    <button class="logout__button" type="submit">
+                        <span>SALIR</span>
+                        <span class="material-symbols-outlined">Logout</span>
+                    </button>
+                </div>
+            </div>
+            
+        </nav>
+    </header>
+
+    <div class="student-registration-wrapper" style="padding: 40px;">
+        <div class="student-registration-container">
+            <div class="student-registration-content">
+                
+                <div class="student-form-container card">
+                    <div class="card-header text-center">
+                        <h3 class="student-form-title">Formulario para Registrar Profesor</h3>
+                    </div>
+
+                    <div class="card-body">
+                        <form id="profesor-form">
+                            <input type="hidden" id="profesorId">
+
+                            <div class="student-form-group mb-3">
+                                <label for="nombre" class="form-label">Nombre del Profesor</label>
+                                <input type="text" id="nombre" name="nombre" class="student-form-control form-control" placeholder="Ingrese el nombre" required>
+                            </div>
+
+                            <div class="student-form-group mb-3">
+                                <label for="apellido" class="form-label">Apellido del Profesor</label>
+                                <input type="text" id="apellido" name="apellido" class="student-form-control form-control" placeholder="Ingrese el apellido" required>
+                            </div>
+
+                            <div class="student-form-group mb-3">
+                                <label for="telefono" class="form-label">Número de Teléfono</label>
+                                <input type="number" id="telefono" name="telefono" class="student-form-control form-control" placeholder="Ingrese el número" required>
+                            </div>
+
+                            <div class="student-form-group mb-3">
+                                <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+                                <input type="date" id="fechaNacimiento" name="fechaNacimiento" class="student-form-control form-control" required>
+                            </div>
+
+                            <div class="student-form-group mb-3">
+                                <label for="sexo" class="form-label">Sexo del Profesor</label>
+                                <select id="sexo" name="sexo" class="student-form-control form-select" required>
+                                    <option value="M">Masculino</option>
+                                    <option value="F">Femenino</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block mt-3 student-submit-btn">Registrar</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="student-table-container card mt-4">
+                    <div class="card-header text-center">
+                        <h3>Lista de Profesores</h3>
+                    </div>
+
+                    <div class="card-body">
+                        <table class="table table-striped student-table">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Teléfono</th>
+                                    <th>Fecha Nacimiento</th>
+                                    <th>Sexo</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="profesores">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
